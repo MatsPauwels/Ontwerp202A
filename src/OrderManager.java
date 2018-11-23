@@ -5,7 +5,7 @@ import order.OrderStateEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderCataloog {
+public class OrderManager {
     private List<Order> orders;
 
 
