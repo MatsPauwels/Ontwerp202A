@@ -10,4 +10,16 @@ public class Address {
     private String number;
     private Position position;
     private String country;
+
+    public Address(City city, String street, String number, String country) {
+        this.city = city;
+        this.street = street;
+        this.number = number;
+        this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s %s",street,number,city,country);
+    }
 }

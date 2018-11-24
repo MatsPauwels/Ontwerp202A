@@ -1,8 +1,7 @@
 package Domain.order;
 
-import Domain.person.Courier;
-
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
 /**
@@ -13,7 +12,22 @@ public class OrderStateEvent {
     private LocalDateTime time;
     private OrderState state;
     private String remark;
+
+    public OrderStateEvent(LocalDateTime time, OrderState state, String remark) {
+        this.time = time;
+        this.state = state;
+        this.remark = remark;
+    }
+
     public OrderState getState() {
         return state;
+    }
+
+
+
+    @Override
+    public String toString() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return String.format("%s: %s (%s)",state.name(),time.format(dateTimeFormatter),remark);
     }
 }
